@@ -1,13 +1,272 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  margin: 0px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.App {
+  height: 100%;
+  width: 100%;
+}
+
+.navigatorBar {
+  background-color: #0b78d8;
+
+  width: 150px;
+  position: fixed;
+
+  height: 100%;
+}
+.content {
+  display: flex;
+  height: calc(100vh - 90px);
+  margin-left: 150px;
+
+  background-color: rgb(255, 255, 255);
+}
+
+/* header styling */
+.searchBarContainer {
+  float: right;
+  height: 20px;
+}
+.headerBar {
+  display: flex;
+  justify-content: space-between;
+  background-color: #0987f6;
+  color: #fff;
+  height: 80px;
+}
+
+.accountInfoContainer {
+  margin: 16px;
+  float: left;
+}
+.accountNameText {
+  font-size: 19px;
+  font-weight: 500;
+  margin: 11px;
+  float: left;
+}
+.accountIconImage {
+  width: 50px;
+  float: left;
+}
+.searchBarContainer {
+  float: left;
+}
+.searchBarInput {
+  all: unset;
+
+  color: #fff;
+  height: 100%;
+  width: 100%;
+  padding: 6px 10px;
+}
+.searchBarInput::placeholder {
+  color: white;
+  font-size: 19px;
+}
+.searchBarForm {
+  background-color: #7cb2f9c4;
+  width: 250px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 20px;
+  margin-right: 20px;
+}
+.systemImageLogoContainer {
+  float: left;
+}
+.systemLogoImage {
+  width: 130px;
+  margin: 10px;
+  margin-top: 14px;
+}
+.toolBarImage {
+  width: 400px;
+  margin: 14px;
+}
+.toolBarContainer {
+  float: left;
+}
+
+/* navigator styling */
+.navigatorIndividualSelectorImageSelected {
+  width: 70px;
+  margin: 14px;
+}
+.navigatorIndividualSelectorImageUnselected {
+  width: 120px;
+  margin: -10px;
+}
+.navigatorIndividualSelectorContainerSelected {
+  margin: 25px;
+  border-radius: 10px;
+  width: 100px;
+  height: 100px;
+  background-color: #7cb2f9c4;
+}
+.navigatorIndividualSelectorContainerUnselected {
+  margin: 29px;
+  border-radius: 10px;
+  width: 90px;
+  height: 90px;
+}
+
+/* content styling */
+.schduleSelectorText {
+  font-weight: 300;
+  width: max-content;
+  margin: auto;
+  font-size: 18px;
+}
+.scheduleCreateButtonText {
+  font-size: 50px;
+  font-weight: 400;
+  color: #0987f6;
+  margin: 0px;
+}
+
+.scheduleSelectorIndividualContainerUnselected {
+  background-color: #ffffff;
+  width: 200px;
+  padding: 40px;
+  color: #c2c2c2;
+  margin: 20px;
+  border-radius: 10px;
+  margin-left: 30px;
+  margin-right: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+.scheduleSelectorIndividualContainerUnselected:hover {
+  background-color: #ffffff;
+  width: 200px;
+  padding: 40px;
+  color: #000000;
+  margin: 20px;
+  border-radius: 10px;
+  margin-left: 30px;
+  margin-right: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+.scheduleSelectorIndividualContainerSelected {
+  background-color: #f2f2f2;
+  width: 200px;
+  padding: 40px;
+  margin: 20px;
+  border-radius: 10px;
+  margin-left: 30px;
+  margin-right: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+.scheduleCreateButtonContainer {
+  margin: 30px;
+  margin-top: 10px;
+}
+.schdeduleSelectorContainer {
+  height: 100%;
+}
+.scheduleEditorContainer {
+  width: 100%;
+  margin: 20px;
+}
+.scheduleEditorSelectorContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 13px;
+  margin-bottom: -2px;
+}
+.scheduleEditorContentContainer {
+  display: flex;
+  flex-direction: column;
+
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  width: 100%;
+  height: calc(100% - 44px);
+}
+.scheduleEditorSelectorIndividualTextSelected {
+  font-weight: 400;
+  font-size: 19px;
+  color: #0987f6;
+}
+.scheduleEditorSelectorIndividualTextUnselected {
+  font-weight: 400;
+  font-size: 19px;
+  color: #c2c2c2;
+}
+.scheduleEditorSelectorIndividualTextUnselected:hover {
+  font-weight: 400;
+  font-size: 19px;
+  color: #0987f6;
+  cursor: pointer;
+}
+
+.scheduleEditorSelectorIndividualContainerSelected {
+  border-bottom: 3px solid #0987f6;
+  flex: 1;
+  text-align: center;
+}
+.scheduleEditorSelectorIndividualContainerUnselected {
+  flex: 1;
+  text-align: center;
+}
+.scheduleEditorIndividualOperationContainer {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  border-radius: 10px;
+  height: 70px;
+  margin: 20px;
+}
+.scheduleEditorArrowImage {
+  width: 20px;
+  margin: 15px;
+  margin-bottom: -10px;
+  filter: invert() opacity(100%);
+}
+.scheduleEditorArrowsContainer {
+  width: 50px;
+  float: left;
+}
+.scheduleEditorHamburgerImage {
+  width: 60px;
+  margin: 0px;
+  margin-top: 12px;
+  filter: opacity(100%);
+}
+.scheduleEditorIndividualOperationTextContainer {
+  float: left;
+}
+.scheduleEditorIndividualOperationText {
+  margin: 24px;
+  font-weight: 400;
+  font-size: 19px;
+}
+.operationDirectionContainer {
+  margin: auto;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.operationDirectionImage {
+  width: 30px;
+  filter: brightness(1.2);
 }
