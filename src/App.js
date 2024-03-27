@@ -8,6 +8,19 @@ import ScheduleEditor from "./components/content/ScheduleEditor/ScheduleEditor";
 import { useState } from "react";
 
 function App() {
+  const [currentlyOpenSchedules, setCurrentlyOpenSchedules] =
+    useState("Schedule 1");
+  const [schedules, setSchedules] = useState([
+    { name: "Schedule 1", operations: [{ operation: "Tranfer Tube" }] },
+    {
+      name: "Schedule 2",
+      operations: [
+        { operation: "Break Loop" },
+        { operation: "Break Loop" },
+        { operation: "Break Loop" },
+      ],
+    },
+  ]);
   return (
     <div className="App">
       <div className="headerBar">
@@ -26,8 +39,17 @@ function App() {
         <Navigator />
       </div>
       <div className="content">
-        <ScheduleSelector />
-        <ScheduleEditor />
+        <ScheduleSelector
+          schedules={schedules}
+          setSchedules={setSchedules}
+          setCurrentlyOpenSchedules={setCurrentlyOpenSchedules}
+          currentlyOpenSchedules={currentlyOpenSchedules}
+        />
+        <ScheduleEditor
+          schedules={schedules}
+          setCurrentlyOpenSchedules={setCurrentlyOpenSchedules}
+          currentlyOpenSchedules={currentlyOpenSchedules}
+        />
       </div>
     </div>
   );
