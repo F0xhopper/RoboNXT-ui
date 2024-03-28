@@ -18,6 +18,7 @@ const ScheduleSelector = (props) => {
       setScheduleInput("");
     }
   }
+
   return (
     <div className="schdeduleSelectorContainer">
       <div className="scheduleCreateButtonContainer">

@@ -45,11 +45,11 @@ code {
 
   height: 100%;
 }
-.content {
+.scheduleEditor {
   display: flex;
   height: calc(100vh - 90px);
   margin-left: 150px;
-
+  transition: 0s;
   background-color: rgb(255, 255, 255);
 }
 
@@ -153,8 +153,16 @@ code {
   font-size: 18px;
 }
 .scheduleCreateButtonText {
+  cursor: pointer;
   font-size: 50px;
-
+  width: 10px;
+  font-weight: 400;
+  color: #0987f6;
+  margin: 0px;
+}
+.scheduleCreateButtonText:hover {
+  font-size: 50px;
+  filter: opacity(50%);
   font-weight: 400;
   color: #0987f6;
   margin: 0px;
@@ -172,6 +180,45 @@ code {
   padding-top: 10px;
   padding-bottom: 10px;
   cursor: pointer;
+}
+.scheduleEditorIndividualOperationDropdownOptionText {
+  font-weight: 400;
+  margin: 0px;
+  margin-top: 5px;
+  font-size: 16px;
+}
+.scheduleEditorIndividualOperationDropdownOptionContainer {
+  display: flex;
+  flex-direction: row;
+  width: 250px;
+  justify-content: space-between;
+  margin: 30px;
+  margin-left: 50px;
+}
+.scheduleEditorIndividualOperationDropdownDeleteText {
+  font-size: 16px;
+  font-weight: 400;
+  color: #0987f6;
+  margin: 0px;
+  margin-top: 5px;
+  cursor: pointer;
+}
+.scheduleEditorIndividualOperationDropdownDeleteText:hover {
+  font-size: 16px;
+  font-weight: 400;
+  color: #0987f6;
+  filter: opacity(50%);
+  margin: 0px;
+  cursor: pointer;
+  margin-top: 5px;
+}
+.scheduleEditorIndividualOperationDropdownOptionInput {
+  background-color: transparent;
+  border-radius: 10px;
+  font-size: 16px;
+  height: 20px;
+  width: 150px;
+  border: 3px solid rgb(223, 223, 223);
 }
 .scheduleSelectorIndividualContainerUnselected:hover {
   background-color: #ffffff;
@@ -199,16 +246,16 @@ code {
   cursor: pointer;
 }
 .scheduleCreateButtonContainer {
-  cursor: pointer;
   margin: 30px;
   margin-top: 10px;
 }
 .schdeduleSelectorContainer {
   height: 100%;
 }
-.scheduleEditorContainer {
-  width: 100%;
+.openScheduleEditorContainer {
+  flex: 1;
   margin: 20px;
+  margin-left: 0px;
 }
 .scheduleEditorSelectorContainer {
   display: flex;
@@ -221,6 +268,7 @@ code {
   flex-direction: column;
   overflow-y: auto;
   background-color: #f2f2f2;
+  box-shadow: inset 0 0 10px #d3d3d3;
 
   border-radius: 10px;
   width: 100%;
@@ -254,16 +302,32 @@ code {
 }
 .scheduleEditorIndividualOperationContainer {
   display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: -1px 1px 5px 2px rgba(219, 219, 219, 0.75);
+
+  margin: 20px;
+}
+.scheduleEditorIndividualOperationTopContainer {
+  display: flex;
+  flex: 1;
   justify-content: space-between;
   background-color: white;
   border-radius: 10px;
   height: 70px;
-  margin: 20px;
+}
+.scheduleEditorIndividualOperationDropdownContainer {
+  background-color: rgb(255, 255, 255);
+  display: block;
+  border-radius: 10px;
+  width: 100%;
 }
 .scheduleEditorCreateOptionsContainer {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  box-shadow: -1px 1px 5px 2px rgba(219, 219, 219, 0.75);
 
   background-color: white;
   border-radius: 10px;
@@ -292,6 +356,7 @@ code {
   margin: 0.7vh;
   border-radius: 1vh;
   margin-right: 0px;
+  cursor: pointer;
 }
 .scheduleEditorCreateOptionsIndividualContainer:hover {
   background-color: white;
@@ -307,7 +372,7 @@ code {
 .createScheduleInput {
   background-color: transparent;
   border: 0px;
-  width: 260px;
+  width: 258px;
   font-size: 19px;
   height: 32px;
   text-align: center;
@@ -329,6 +394,8 @@ code {
 .scheduleEditorCreateOptionsIndividualImage {
   width: 50%;
   margin: 24%;
+  pointer-events: none;
+
   margin-top: 24%;
 }
 .scheduleEditorArrowImage {
@@ -336,6 +403,14 @@ code {
   margin: 15px;
   margin-bottom: -10px;
   filter: invert() opacity(100%);
+  cursor: pointer;
+}
+.scheduleEditorArrowImage:hover {
+  width: 20px;
+  margin: 15px;
+  margin-bottom: -10px;
+  filter: invert() opacity(50%);
+  cursor: pointer;
 }
 .scheduleEditorArrowsContainer {
   width: 50px;
@@ -343,9 +418,16 @@ code {
 }
 .scheduleEditorHamburgerImage {
   width: 40px;
+  cursor: pointer;
   margin: 5px;
   margin-top: 15px;
   filter: opacity(100%);
+}
+.scheduleEditorHamburgerImage:hover {
+  width: 40px;
+  margin: 5px;
+  margin-top: 15px;
+  filter: opacity(50%);
 }
 .scheduleEditorIndividualOperationTextContainer {
   float: left;
@@ -368,9 +450,18 @@ code {
 }
 .operationCreateButtonText {
   color: #0987f6;
+  cursor: pointer;
   font-weight: 400;
   font-size: 50px;
   margin: auto;
+}
+.operationCreateButtonText:hover {
+  color: #0987f6;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 50px;
+  margin: auto;
+  filter: opacity(50%);
 }
 .operationCreateButtonContainer {
   display: flex;
