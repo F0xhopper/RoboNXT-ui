@@ -1,24 +1,59 @@
+import { useState } from "react";
+// Components
 import HeaderBar from "./components/header-bar";
-import ScheduleSelector from "./components/schedule-editor/ScheduleSelector";
 import Navigator from "./components/navigator-bar";
 import ScheduleEditor from "./components/schedule-editor";
-import { useState } from "react";
-
+/**
+ * The app wrapper
+ *  @returns {JSX.Element}
+ */
 function App() {
   const [currentlyOpenSchedules, setCurrentlyOpenSchedules] =
-    useState("Schedule 1");
+    useState("Schedule 1"); // - The name of the schedule currently open
   
   const [schedules, setSchedules] = useState([
-    { name: "Schedule 1", operations: [{ operation: "Transfer Tube" }] },
+    {
+      name: "RunSchedule2Batch",
+      operations: [
+        { operation: "Transfer Tube" },
+        { operation: "Device Operation" },
+        { operation: "Start Next Schedule Thread" },
+        { operation: "Loop" },
+        { operation: "Break Loop" },
+        { operation: "Transfer Tube" },
+        { operation: "Device Operation" },
+      ],
+    },
+    {
+      name: "Schedule 1",
+      operations: [
+        { operation: "Transfer Tube" },
+        { operation: "Device Operation" },
+        { operation: "Transfer Tube" },
+        { operation: "Device Operation" },
+      ],
+    },
     {
       name: "Schedule 2",
       operations: [
+        { operation: "Transfer Tube" },
+        { operation: "Loop" },
         { operation: "Break Loop" },
-        { operation: "Break Loop" },
-        { operation: "Break Loop" },
+        { operation: "Transfer Tube" },
+        { operation: "Start Next Schedule Thread" },
+        { operation: "Device Operation" },
       ],
     },
-  ]);
+
+    {
+      name: "Schedule 3",
+      operations: [
+        { operation: "Transfer Tube" },
+        { operation: "Start Next Schedule Thread" },
+        { operation: "Device Operation" },
+      ],
+    },
+  ]); // - The data objects of each schedule
   return (
     <div className="App">
       <HeaderBar />

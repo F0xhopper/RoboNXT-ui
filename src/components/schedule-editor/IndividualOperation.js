@@ -1,3 +1,4 @@
+// Images 
 import arrowUp from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/up-arrow.png";
 import arrowDown from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/down-arrow.png";
 import hamburgerMenu from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/hamburger-menu.png";

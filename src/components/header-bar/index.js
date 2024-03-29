@@ -1,3 +1,4 @@
+// Components
 import SystemLogo from "./SystemLogo";
 import ToolBar from "./ToolBar";
 import SearchBar from "./SearchBar";

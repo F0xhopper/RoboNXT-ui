@@ -1,3 +1,4 @@
+// Image
 import logo from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/company-branding.png";
 /**
  * The systems / company logo

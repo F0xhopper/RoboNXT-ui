@@ -1,3 +1,4 @@
+// Image
 import accountIcon from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/account-icon.png";
 /**
  * The non-functional account details with name and profile image

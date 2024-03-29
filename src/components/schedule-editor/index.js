@@ -1,9 +1,11 @@
+import { useState, useEffect } from "react";
+// Componenets
 import ScheduleEditorHeader from "./Header";
+import ScheduleSelector from "./ScheduleSelector";
 import CreateOperaiton from "./CreateOperation";
 import IndividualOperaiton from "./IndividualOperation";
+// Image
 import operationDirection from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/operation-direction.png";
-import { useState, useEffect } from "react";
-import ScheduleSelector from "./ScheduleSelector";
 /**
  * The schedule editor wrapper
  * Encompases the schedule selector, each inidivual operation of the open schedule and the create operation tool if in create mode

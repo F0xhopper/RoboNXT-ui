@@ -1,3 +1,4 @@
+// Images
 import deviceOpertion from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/operation-icons/device-operation.png";
 import tranferIcon from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/operation-icons/transfer-plate.png";
 import breakLoopIcon from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/operation-icons/break-loop.png";

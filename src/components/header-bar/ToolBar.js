@@ -1,3 +1,4 @@
+// Image
 import toolBar from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/header-tools.png";
 /**
  * The unfunctional header tool bar

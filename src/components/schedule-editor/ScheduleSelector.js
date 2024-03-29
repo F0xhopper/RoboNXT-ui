@@ -31,7 +31,7 @@ const ScheduleSelector = (props) => {
       ]);
       // Closes the create schedule input 
       setCreatingSchedule(false);
-      // Sets input to default os when opened again doesn't show previous text
+      // Sets input to default so when opened again doesn't show previous text
       setScheduleInput("");
     }
   }

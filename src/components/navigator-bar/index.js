@@ -1,28 +1,28 @@
+import { useState } from "react";
+// Images
 import penIcon from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/navigator-bar-icons/Icon__0000_Layer-7.png";
 import storageIcon from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/navigator-bar-icons/Icon__0003_Layer-4.png";
 import objectIcon from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/navigator-bar-icons/Icon__0001_Layer-6.png";
 import deviceIcon from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/navigator-bar-icons/Icon__0004_Layer-3.png";
 import eventIcon from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/navigator-bar-icons/Icon__0005_Layer-1.png";
 import screenIcon from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/navigator-bar-icons/Icon__0002_Layer-5.png";
-import { useState } from "react";
 /**
  * The left side navigator bar
  * A tool tip appears when hovering over each icon
  * @returns {JSX.Element}
  */
-
 const Navigator = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 }); // - Position of mouse
 
-  const [showText, setShowText] = useState(false); // - Boolean for if the mouse is currently over an icon triggering to show text
+  const [showText, setShowText] = useState(false); // - Boolean for if the mouse is currently over an icon
 
   const [hoverText, setHoverText] = useState(); //  -  The text that is displayed on hover
-/**
- * Sets the postion variable to the current mouse position
- * Is called when mouse has entered icon
- * 
- * @param {*} event - provides mouse position
- */
+  /**
+   * Sets the postion variable to the current mouse position
+   * Is called when mouse has entered icon
+   *
+   * @param {*} event - provides mouse position
+   */
   function handleMouseMove(event) {
     setPosition({ x: event.clientX - 4, y: event.clientY - 50 });
   }
