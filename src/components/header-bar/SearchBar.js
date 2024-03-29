@@ -1,3 +1,7 @@
+/**
+ * The unfunctional search bar
+ * @returns {JSX.Element} 
+ */
 const SearchBar = () => {
   return (
     <div className="searchBarContainer">

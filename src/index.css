@@ -40,7 +40,7 @@ code {
 .navigatorBar {
   background-color: #0b78d8;
 
-  width: 150px;
+  width: 132px;
   position: fixed;
 
   height: 100%;
@@ -48,7 +48,7 @@ code {
 .scheduleEditor {
   display: flex;
   height: calc(100vh - 90px);
-  margin-left: 150px;
+  margin-left: 132px;
   transition: 0s;
   background-color: rgb(255, 255, 255);
 }
@@ -68,6 +68,7 @@ code {
 
 .accountInfoContainer {
   margin: 16px;
+
   float: left;
 }
 .accountNameText {
@@ -110,7 +111,7 @@ code {
   float: left;
 }
 .systemLogoImage {
-  width: 130px;
+  width: 115px;
   margin: 10px;
   margin-top: 14px;
 }
@@ -124,25 +125,42 @@ code {
 
 /* navigator styling */
 .navigatorIndividualSelectorImageSelected {
-  width: 70px;
-  margin: 14px;
+  width: 53px;
+  cursor: pointer;
+  margin: 24px;
 }
 .navigatorIndividualSelectorImageUnselected {
-  width: 120px;
-  margin: -10px;
+  width: 50px;
+  cursor: pointer;
+  margin: 24px;
+}
+.hoverText {
+  transition: 0s;
+  position: absolute;
+  font-weight: 400;
+  background-color: #0987f6ab;
+  color: rgb(255, 255, 255);
+  padding: 5px;
+  border-radius: 10px;
+  z-index: 100;
+}
+.navigatorIndividualSelectorImageUnselected:hover {
+  width: 50px;
+  margin: 24px;
+  filter: opacity(50%);
 }
 .navigatorIndividualSelectorContainerSelected {
-  margin: 25px;
+  margin: 15px;
   border-radius: 10px;
   width: 100px;
   height: 100px;
   background-color: #7cb2f9c4;
 }
 .navigatorIndividualSelectorContainerUnselected {
-  margin: 29px;
+  margin: 15px;
   border-radius: 10px;
-  width: 90px;
-  height: 90px;
+  width: 100px;
+  height: 100px;
 }
 
 /* content styling */
@@ -393,7 +411,9 @@ code {
 }
 .scheduleEditorCreateOptionsIndividualImage {
   width: 50%;
-  margin: 24%;
+  object-fit: cover;
+
+  margin: 23%;
   pointer-events: none;
 
   margin-top: 24%;
@@ -403,7 +423,7 @@ code {
   margin: 15px;
   margin-bottom: -10px;
   filter: invert() opacity(100%);
-  cursor: pointer;
+  cursor: poi3ter;
 }
 .scheduleEditorArrowImage:hover {
   width: 20px;
@@ -446,7 +466,8 @@ code {
 .operationDirectionImage {
   margin: auto;
   width: 30px;
-  filter: brightness(1.2);
+
+  filter: brightness(1.1);
 }
 .operationCreateButtonText {
   color: #0987f6;

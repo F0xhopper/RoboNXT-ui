@@ -1,114 +1,28 @@
 import ScheduleEditorHeader from "./Header";
 import CreateOperaiton from "./CreateOperation";
-import arrowUp from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/4626306 (1).png";
-import arrowDown from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/4626306 (2).png";
-import hamburgerMenu from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/4626306 (4).png";
-
+import IndividualOperaiton from "./IndividualOperation";
 import operationDirection from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/Screenshot 2024-03-27 at 01.49.58.png";
 import { useState, useEffect } from "react";
-import { editableInputTypes } from "@testing-library/user-event/dist/utils";
 import ScheduleSelector from "./ScheduleSelector";
-
+/**
+ * The schedule editor wrapper
+ * Encompases the schedule selector, each inidivual operation of the open schedule and the create operation tool if in create mode
+ * Dynamically renders certain componenets based on variable values
+ * Props are taken from the App.js then used as props in the wrapped components
+ * @returns {JSX.Element}
+ */
 const ScheduleEditor = (props) => {
-  const [openOperation, setOpenOperation] = useState();
-  const [creatingNewOperation, setCreatingNewOperation] = useState(false);
-  function createOperation(event) {
-    const indexOfSchedule = props.schedules.findIndex(
-      (x) => x.name === props.currentlyOpenSchedules
-    );
-    setOpenOperation(
-      props.schedules.find((schedule) => {
-        return schedule.name === props.currentlyOpenSchedules;
-      }).operations.length
-    );
-    props.setSchedules((prevSchedules) => {
-      let updatedSchedules = [...prevSchedules];
-      updatedSchedules[indexOfSchedule] = {
-        ...updatedSchedules[indexOfSchedule],
-        operations: [
-          ...updatedSchedules[indexOfSchedule].operations,
-          { operation: event.target.id },
-        ],
-      };
-      return updatedSchedules;
-    });
-    setCreatingNewOperation(false);
-  }
-  function deleteOperation(e, event) {
-    const indexOfSchedule = props.schedules.findIndex(
-      (x) => x.name === props.currentlyOpenSchedules
-    );
-    let filteredOperations = props.schedules.find((schedule) => {
-      return schedule.name === props.currentlyOpenSchedules;
-    }).operations;
+  const [openOperation, setOpenOperation] = useState(); // - the index of the current open operation if any
+  const [creatingNewOperation, setCreatingNewOperation] = useState(false); // - is the user creating new operation, if true opens create operation selector
 
-    filteredOperations.splice(event, 1);
-    props.setSchedules((prevSchedules) => {
-      let updatedSchedules = [...prevSchedules];
-      updatedSchedules[indexOfSchedule] = {
-        ...updatedSchedules[indexOfSchedule],
-        operations: filteredOperations,
-      };
-      return updatedSchedules;
-    });
-    setOpenOperation();
-  }
-  function moveOperation(e, event) {
-    const indexOfSchedule = props.schedules.findIndex(
-      (x) => x.name === props.currentlyOpenSchedules
-    );
-    setOpenOperation();
-    if (e.target.id == "arrowUp") {
-      let filteredOperations = props.schedules.find((schedule) => {
-        return schedule.name === props.currentlyOpenSchedules;
-      }).operations;
-      filteredOperations.splice(
-        event - 1,
-        0,
-        props.schedules.find((schedule) => {
-          return schedule.name === props.currentlyOpenSchedules;
-        }).operations[event]
-      );
-      filteredOperations.splice(event + 1, 1);
-      props.setSchedules((prevSchedules) => {
-        let updatedSchedules = [...prevSchedules];
-        updatedSchedules[indexOfSchedule] = {
-          ...updatedSchedules[indexOfSchedule],
-          operations: filteredOperations,
-        };
-        return updatedSchedules;
-      });
-    } else {
-      let filteredOperations = props.schedules.find((schedule) => {
-        return schedule.name === props.currentlyOpenSchedules;
-      }).operations;
-      filteredOperations.splice(
-        event + 2,
-        0,
-        props.schedules.find((schedule) => {
-          return schedule.name === props.currentlyOpenSchedules;
-        }).operations[event]
-      );
-      filteredOperations.splice(event, 1);
-      props.setSchedules((prevSchedules) => {
-        let updatedSchedules = [...prevSchedules];
-        updatedSchedules[indexOfSchedule] = {
-          ...updatedSchedules[indexOfSchedule],
-          operations: filteredOperations,
-        };
-        return updatedSchedules;
-      });
-    }
-  }
-  function openOperationFunction(index) {
-    if (openOperation !== index) {
-      setOpenOperation(index);
-    } else setOpenOperation();
-  }
+  /**
+   * closes any opened operations and the create opeartions selector when another schedule is opened
+   */
   useEffect(() => {
     setOpenOperation();
     setCreatingNewOperation(false);
   }, [props.currentlyOpenSchedules]);
+
   return (
     <div className="scheduleEditor">
       <ScheduleSelector
@@ -126,71 +40,16 @@ const ScheduleEditor = (props) => {
             })
             .operations.map((operation, index) => (
               <div>
-                <div className="scheduleEditorIndividualOperationContainer">
-                  <div className="scheduleEditorIndividualOperationTopContainer">
-                    <div>
-                      <div className="scheduleEditorArrowsContainer">
-                        <img
-                          id="arrowUp"
-                          onClick={(e) => moveOperation(e, index)}
-                          className="scheduleEditorArrowImage"
-                          src={arrowUp}
-                        ></img>
-                        <img
-                          id="arrowDown"
-                          onClick={(e) => moveOperation(e, index)}
-                          className="scheduleEditorArrowImage"
-                          src={arrowDown}
-                        ></img>
-                      </div>{" "}
-                      <div className="scheduleEditorIndividualOperationTextContainer">
-                        <h2 className="scheduleEditorIndividualOperationText">
-                          {operation.operation}
-                        </h2>
-                      </div>
-                    </div>
-                    <div onClick={() => openOperationFunction(index)}>
-                      {" "}
-                      <img
-                        className="scheduleEditorHamburgerImage"
-                        src={hamburgerMenu}
-                      ></img>{" "}
-                    </div>
-                  </div>
-                  {openOperation == index ? (
-                    <div className="scheduleEditorIndividualOperationDropdownContainer">
-                      <div className="scheduleEditorIndividualOperationDropdownOptionContainer">
-                        {" "}
-                        <h2 className="scheduleEditorIndividualOperationDropdownOptionText">
-                          Option 1
-                        </h2>
-                        <input className="scheduleEditorIndividualOperationDropdownOptionInput"></input>
-                      </div>
-                      <div className="scheduleEditorIndividualOperationDropdownOptionContainer">
-                        {" "}
-                        <h2 className="scheduleEditorIndividualOperationDropdownOptionText">
-                          Option 2
-                        </h2>
-                        <input className="scheduleEditorIndividualOperationDropdownOptionInput"></input>
-                      </div>
-                      <div className="scheduleEditorIndividualOperationDropdownOptionContainer">
-                        {" "}
-                        <h2 className="scheduleEditorIndividualOperationDropdownOptionText">
-                          Option 3
-                        </h2>
-                        <input className="scheduleEditorIndividualOperationDropdownOptionInput"></input>
-                      </div>
-                      <div className="scheduleEditorIndividualOperationDropdownOptionContainer">
-                        <h2
-                          onClick={(e) => deleteOperation(e, index)}
-                          className="scheduleEditorIndividualOperationDropdownDeleteText"
-                        >
-                          Delete Operation
-                        </h2>
-                      </div>
-                    </div>
-                  ) : null}
-                </div>{" "}
+                <IndividualOperaiton
+                  schedules={props.schedules}
+                  setSchedules={props.setSchedules}
+                  setOpenOperation={setOpenOperation}
+                  openOperation={openOperation}
+                  operation={operation}
+                  index={index}
+                  currentlyOpenSchedules={props.currentlyOpenSchedules}
+                />
+
                 {index !=
                 props.schedules.find((schedule) => {
                   return schedule.name === props.currentlyOpenSchedules;
@@ -205,7 +64,10 @@ const ScheduleEditor = (props) => {
                 ) : null}
               </div>
             ))}
-          {creatingNewOperation ? (
+          {creatingNewOperation &&
+          props.schedules.find((schedule) => {
+            return schedule.name === props.currentlyOpenSchedules;
+          }).operations.length !== 0 ? (
             <div className="operationDirectionContainer">
               <img
                 className="operationDirectionImage"
@@ -231,7 +93,7 @@ const ScheduleEditor = (props) => {
               setCurrentlyOpenSchedules={props.setCurrentlyOpenSchedules}
               currentlyOpenSchedules={props.currentlyOpenSchedules}
             />
-          )}
+          )}{" "}
         </div>
       </div>
     </div>

@@ -1,20 +1,37 @@
 import { useState } from "react";
-
+/**
+ * The schedule selector and creator
+ * Changes the open schedule
+ * Opens an input when plus button pressed to create new schedule
+ * @returns {JSX.Element}
+ */
 const ScheduleSelector = (props) => {
-  const [creatingSchedule, setCreatingSchedule] = useState(false);
-  const [scheduleInput, setScheduleInput] = useState();
+  const [creatingSchedule, setCreatingSchedule] = useState(false); // - True if user is creating new schedule which goes ont to makes input appear
+  const [scheduleInput, setScheduleInput] = useState(); // - Text input of new schedule
+  /**
+   * Sets the clicked schedule to be open
+   * @param {string} scheduleName - The name of schedule pressed
+   */
   function openSchedule(scheduleName) {
+    // If the schedule isnt currently open changes open schdule to clicked preventing unnecessary rerenders
     if (props.currentlyOpenSchedules !== scheduleName) {
       props.setCurrentlyOpenSchedules(scheduleName);
     }
   }
+  /**
+   * Adds a new schedule to the schedules array when enter is pressed and if input is not empty
+   * @param {object} event - Event object to listen if enter key is pressed
+   */
   function createSchedule(event) {
-    if (creatingSchedule && event.key == "Enter") {
+    // When the enter key is pressed and the input array isnt empty adds a new schedule with inputted name to schedules array
+    if (scheduleInput != null && event.key == "Enter") {
       props.setSchedules((prevState) => [
         ...prevState,
         { name: scheduleInput, operations: [] },
       ]);
+      // Closes the create schedule input 
       setCreatingSchedule(false);
+      // Sets input to default os when opened again doesn't show previous text
       setScheduleInput("");
     }
   }

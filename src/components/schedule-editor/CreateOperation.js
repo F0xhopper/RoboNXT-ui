@@ -1,29 +1,46 @@
-import deviceOpertion from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/Operation Icons/device-operation_hu164f4cf50c5bcef6c4ad218f9fba70e0_1251_500x0_resize_box_2 (1).png";
-import tranferIcon from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/Operation Icons/transfer_hu5097c406b98ce7a80b354094a20bfc66_1302_7.png";
-import breakLoopIcon from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/Operation Icons/break-loop_huec7716100118b8b4e150cb4139ff973e_987_ (1).png";
-import startNextThreadIcon from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/Operation Icons/start-next-thread_hu51ed62eab1cfb239e1765cd4773aa3 (1).png";
-
+import deviceOpertion from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/operation-icons/device-operation.png";
+import tranferIcon from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/operation-icons/transfer-plate.png";
+import breakLoopIcon from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/operation-icons/break-loop.png";
+import startNextThreadIcon from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/operation-icons/start-next-thread.png";
+/**
+ * Create new operation selector
+ * Appears when plus button in the open schedule is pressed
+ * When an operation is selected it adds a new operation to the end of the operations array and closes seletor
+ * @returns {JSX.Element}
+ */
 const CreateOperaiton = (props) => {
+  /**
+   * Adds a new operation to the currently opened schedule
+   * Then once added closes the selector
+   * @param {object} event - the event object used to get the id which holds the names of the operations
+   */
   function createOperation(event) {
+    // Gets the index of the open schedule in the schedules array
     const indexOfSchedule = props.schedules.findIndex(
       (x) => x.name === props.currentlyOpenSchedules
     );
+    // using the opeartion name gathered from id and the indexOfSchedule it adds a new operation to the operations array within the open schedule
+    props.setSchedules((prevSchedules) => {
+      return prevSchedules.map((schedule, index) => {
+        if (index === indexOfSchedule) {
+          return {
+            ...schedule,
+            operations: [
+              ...schedule.operations,
+              { operation: event.target.id },
+            ],
+          };
+        }
+        return schedule;
+      });
+    });
+    // Then sets the created operation as opened for editing of the options
     props.setOpenOperation(
       props.schedules.find((schedule) => {
         return schedule.name === props.currentlyOpenSchedules;
       }).operations.length
     );
-    props.setSchedules((prevSchedules) => {
-      let updatedSchedules = [...prevSchedules];
-      updatedSchedules[indexOfSchedule] = {
-        ...updatedSchedules[indexOfSchedule],
-        operations: [
-          ...updatedSchedules[indexOfSchedule].operations,
-          { operation: event.target.id },
-        ],
-      };
-      return updatedSchedules;
-    });
+    // Closes the create operation selectr
     props.setCreatingNewOperation(false);
   }
   return (
@@ -60,43 +77,71 @@ const CreateOperaiton = (props) => {
             src={breakLoopIcon}
           ></img>
         </div>{" "}
-        <div className="scheduleEditorCreateOptionsIndividualContainer">
+        <div
+          id="Start Next Schedule Thread"
+          onClick={(e) => createOperation(e)}
+          className="scheduleEditorCreateOptionsIndividualContainer"
+        >
           <img
             className="scheduleEditorCreateOptionsIndividualImage"
             src={startNextThreadIcon}
           ></img>
         </div>{" "}
-        <div className="scheduleEditorCreateOptionsIndividualContainer">
+        <div
+          id="Tranfer Plate"
+          onClick={(e) => createOperation(e)}
+          className="scheduleEditorCreateOptionsIndividualContainer"
+        >
           <img
             className="scheduleEditorCreateOptionsIndividualImage"
             src={tranferIcon}
           ></img>
         </div>{" "}
-        <div className="scheduleEditorCreateOptionsIndividualContainer">
+        <div
+          id="Device Operation"
+          onClick={(e) => createOperation(e)}
+          className="scheduleEditorCreateOptionsIndividualContainer"
+        >
           <img
             className="scheduleEditorCreateOptionsIndividualImage"
             src={deviceOpertion}
           ></img>
         </div>{" "}
-        <div className="scheduleEditorCreateOptionsIndividualContainer">
+        <div
+          id="Break Loop"
+          onClick={(e) => createOperation(e)}
+          className="scheduleEditorCreateOptionsIndividualContainer"
+        >
           <img
             className="scheduleEditorCreateOptionsIndividualImage"
             src={breakLoopIcon}
           ></img>
         </div>{" "}
-        <div className="scheduleEditorCreateOptionsIndividualContainer">
+        <div
+          id="Start Next Schedule Thread"
+          onClick={(e) => createOperation(e)}
+          className="scheduleEditorCreateOptionsIndividualContainer"
+        >
           <img
             className="scheduleEditorCreateOptionsIndividualImage"
             src={startNextThreadIcon}
           ></img>
         </div>{" "}
-        <div className="scheduleEditorCreateOptionsIndividualContainer">
+        <div
+          id="Tranfer Plate"
+          onClick={(e) => createOperation(e)}
+          className="scheduleEditorCreateOptionsIndividualContainer"
+        >
           <img
             className="scheduleEditorCreateOptionsIndividualImage"
             src={tranferIcon}
           ></img>
         </div>{" "}
-        <div className="scheduleEditorCreateOptionsIndividualContainer">
+        <div
+          id="Device Operation"
+          onClick={(e) => createOperation(e)}
+          className="scheduleEditorCreateOptionsIndividualContainer"
+        >
           <img
             className="scheduleEditorCreateOptionsIndividualImage"
             src={deviceOpertion}

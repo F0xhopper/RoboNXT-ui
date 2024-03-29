@@ -1,5 +1,8 @@
 import accountIcon from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/social-media-avatar-profile-icon-isolated-on-square-background-vector.png";
-
+/**
+ * The non-functional account details with name and profile image
+ * @returns {JSX.Element} 
+ */
 const AccountInfo = () => {
   return (
     <div className="accountInfoContainer">

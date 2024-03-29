@@ -2,7 +2,10 @@ import SystemLogo from "./SystemLogo";
 import ToolBar from "./ToolBar";
 import SearchBar from "./SearchBar";
 import AccountInfo from "./AccountInfo";
-
+/**
+ * The header wrapper component
+ * @returns {JSX.Element} 
+ */
 const HeaderBar = () => {
   return (
     <div className="headerBar">

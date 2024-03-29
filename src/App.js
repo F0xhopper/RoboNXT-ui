@@ -7,6 +7,7 @@ import { useState } from "react";
 function App() {
   const [currentlyOpenSchedules, setCurrentlyOpenSchedules] =
     useState("Schedule 1");
+  
   const [schedules, setSchedules] = useState([
     { name: "Schedule 1", operations: [{ operation: "Transfer Tube" }] },
     {

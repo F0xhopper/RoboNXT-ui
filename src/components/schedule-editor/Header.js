@@ -1,3 +1,7 @@
+/**
+ * The unfuctional opened schedule navigator
+ * @returns {JSX.Element}
+ */
 const ScheduleEditorHeader = () => {
   return (
     <div className="scheduleEditorSelectorContainer">
