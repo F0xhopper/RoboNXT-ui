@@ -1,6 +1,6 @@
-import arrowUp from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/4626306 (1).png";
-import arrowDown from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/4626306 (2).png";
-import hamburgerMenu from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/4626306 (4).png";
+import arrowUp from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/up-arrow.png";
+import arrowDown from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/down-arrow.png";
+import hamburgerMenu from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/hamburger-menu.png";
 /**
  * The individual operations of the opened schedule
  * @returns {JSX.Element}

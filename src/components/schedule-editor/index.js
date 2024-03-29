@@ -1,7 +1,7 @@
 import ScheduleEditorHeader from "./Header";
 import CreateOperaiton from "./CreateOperation";
 import IndividualOperaiton from "./IndividualOperation";
-import operationDirection from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/Screenshot 2024-03-27 at 01.49.58.png";
+import operationDirection from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/operation-direction.png";
 import { useState, useEffect } from "react";
 import ScheduleSelector from "./ScheduleSelector";
 /**

@@ -1,4 +1,4 @@
-import logo from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/New Project.png";
+import logo from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/company-branding.png";
 /**
  * The systems / company logo
  * @returns {JSX.Element} 
