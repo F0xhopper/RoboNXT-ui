@@ -12,6 +12,16 @@ import screenIcon from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Ima
  * @returns {JSX.Element}
  */
 const Navigator = () => {
+  // Object with navigator option names with allocated icon images allowing map rendering
+  const navigatorIcons = {
+    "Schedule Editor": penIcon,
+    "Storage Manager": storageIcon,
+    "Object Manager": objectIcon,
+    "Device Manager": deviceIcon,
+    "Event Viewer": eventIcon,
+    Simulation: screenIcon,
+  };
+
   const [position, setPosition] = useState({ x: 0, y: 0 }); // - Position of mouse
 
   const [showText, setShowText] = useState(false); // - Boolean for if the mouse is currently over an icon
@@ -30,78 +40,26 @@ const Navigator = () => {
   return (
     <div className="navigatorBar">
       <div className="navigatorContainer">
-        <div className="navigatorIndividualSelectorContainerSelected">
-          <img
-            onMouseMove={handleMouseMove}
-            onMouseEnter={() => {
-              setShowText(true);
-              setHoverText("Schedule Editor");
-            }}
-            onMouseLeave={() => setShowText(false)}
-            className="navigatorIndividualSelectorImageSelected"
-            src={penIcon}
-          ></img>
-        </div>
-        <div className="navigatorIndividualSelectorContainerUnselected">
-          <img
-            onMouseMove={handleMouseMove}
-            onMouseEnter={() => {
-              setShowText(true);
-              setHoverText("Storage Manager");
-            }}
-            onMouseLeave={() => setShowText(false)}
-            className="navigatorIndividualSelectorImageUnselected"
-            src={storageIcon}
-          ></img>
-        </div>
-        <div className="navigatorIndividualSelectorContainerUnselected">
-          <img
-            onMouseMove={handleMouseMove}
-            onMouseEnter={() => {
-              setShowText(true);
-              setHoverText("Object Manager");
-            }}
-            onMouseLeave={() => setShowText(false)}
-            className="navigatorIndividualSelectorImageUnselected"
-            src={objectIcon}
-          ></img>
-        </div>
-        <div className="navigatorIndividualSelectorContainerUnselected">
-          <img
-            onMouseMove={handleMouseMove}
-            onMouseEnter={() => {
-              setShowText(true);
-              setHoverText("Device Manager");
-            }}
-            onMouseLeave={() => setShowText(false)}
-            className="navigatorIndividualSelectorImageUnselected"
-            src={deviceIcon}
-          ></img>
-        </div>
-        <div className="navigatorIndividualSelectorContainerUnselected">
-          <img
-            onMouseMove={handleMouseMove}
-            onMouseEnter={() => {
-              setShowText(true);
-              setHoverText("Event Viewer");
-            }}
-            onMouseLeave={() => setShowText(false)}
-            className="navigatorIndividualSelectorImageUnselected"
-            src={eventIcon}
-          ></img>
-        </div>{" "}
-        <div className="navigatorIndividualSelectorContainerUnselected">
-          <img
-            onMouseMove={handleMouseMove}
-            onMouseEnter={() => {
-              setShowText(true);
-              setHoverText("Simulation");
-            }}
-            onMouseLeave={() => setShowText(false)}
-            className="navigatorIndividualSelectorImageUnselected"
-            src={screenIcon}
-          ></img>
-        </div>
+        {Object.keys(navigatorIcons).map((iconName, index) => (
+          <div
+            className={
+              iconName == "Schedule Editor"
+                ? "navigatorIndividualSelectorContainerSelected"
+                : "navigatorIndividualSelectorContainerUnselected"
+            }
+          >
+            <img
+              onMouseMove={handleMouseMove}
+              onMouseEnter={() => {
+                setShowText(true);
+                setHoverText(iconName);
+              }}
+              onMouseLeave={() => setShowText(false)}
+              className="navigatorIndividualSelectorImageSelected"
+              src={navigatorIcons[iconName]}
+            ></img>
+          </div>
+        ))}
       </div>
       {showText && (
         <div

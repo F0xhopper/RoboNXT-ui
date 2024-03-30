@@ -8,9 +8,10 @@ import ScheduleEditor from "./components/schedule-editor";
  *  @returns {JSX.Element}
  */
 function App() {
+  // - The name of the schedule currently open
   const [currentlyOpenSchedules, setCurrentlyOpenSchedules] =
-    useState("Schedule 1"); // - The name of the schedule currently open
-  
+    useState("Schedule 1");
+  // - The data objects of each schedule
   const [schedules, setSchedules] = useState([
     {
       name: "RunSchedule2Batch",
@@ -53,7 +54,7 @@ function App() {
         { operation: "Device Operation" },
       ],
     },
-  ]); // - The data objects of each schedule
+  ]);
   return (
     <div className="App">
       <HeaderBar />

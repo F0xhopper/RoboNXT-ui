@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 // Componenets
 import ScheduleEditorHeader from "./Header";
 import ScheduleSelector from "./ScheduleSelector";
@@ -41,7 +41,7 @@ const ScheduleEditor = (props) => {
               return schedule.name === props.currentlyOpenSchedules;
             })
             .operations.map((operation, index) => (
-              <div>
+              <React.Fragment>
                 <IndividualOperaiton
                   schedules={props.schedules}
                   setSchedules={props.setSchedules}
@@ -53,30 +53,30 @@ const ScheduleEditor = (props) => {
                 />
 
                 {index !=
-                props.schedules.find((schedule) => {
-                  return schedule.name === props.currentlyOpenSchedules;
-                }).operations.length -
-                  1 ? (
+                  props.schedules.find((schedule) => {
+                    return schedule.name === props.currentlyOpenSchedules;
+                  }).operations.length -
+                    1 ?? (
                   <div className="operationDirectionContainer">
                     <img
                       className="operationDirectionImage"
                       src={operationDirection}
                     ></img>
                   </div>
-                ) : null}
-              </div>
+                )}
+              </React.Fragment>
             ))}
           {creatingNewOperation &&
-          props.schedules.find((schedule) => {
-            return schedule.name === props.currentlyOpenSchedules;
-          }).operations.length !== 0 ? (
-            <div className="operationDirectionContainer">
-              <img
-                className="operationDirectionImage"
-                src={operationDirection}
-              ></img>
-            </div>
-          ) : null}
+            props.schedules.find((schedule) => {
+              return schedule.name === props.currentlyOpenSchedules;
+            }).operations.length !== 0 && (
+              <div className="operationDirectionContainer">
+                <img
+                  className="operationDirectionImage"
+                  src={operationDirection}
+                ></img>
+              </div>
+            )}
           {!creatingNewOperation ? (
             <div className="operationCreateButtonContainer">
               <h2

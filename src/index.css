@@ -164,7 +164,7 @@ code {
 }
 
 /* content styling */
-.schduleSelectorText {
+.scheduleSelectorText {
   font-weight: 300;
   width: max-content;
   margin: auto;
@@ -267,7 +267,7 @@ code {
   margin: 30px;
   margin-top: 10px;
 }
-.schdeduleSelectorContainer {
+.schededuleSelectorContainer {
   height: 100%;
 }
 .openScheduleEditorContainer {

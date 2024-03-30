@@ -1,4 +1,5 @@
-// Images 
+// Images
+import React from "react";
 import arrowUp from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/up-arrow.png";
 import arrowDown from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/down-arrow.png";
 import hamburgerMenu from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/hamburger-menu.png";
@@ -116,39 +117,36 @@ const IndividualOperaiton = (props) => {
           ></img>{" "}
         </div>
       </div>
-      {props.openOperation == props.index ? (
+      {props.openOperation === props.index && (
         <div className="scheduleEditorIndividualOperationDropdownContainer">
           <div className="scheduleEditorIndividualOperationDropdownOptionContainer">
-            {" "}
             <h2 className="scheduleEditorIndividualOperationDropdownOptionText">
               Option 1
             </h2>
-            <input className="scheduleEditorIndividualOperationDropdownOptionInput"></input>
+            <input className="scheduleEditorIndividualOperationDropdownOptionInput" />
           </div>
           <div className="scheduleEditorIndividualOperationDropdownOptionContainer">
-            {" "}
             <h2 className="scheduleEditorIndividualOperationDropdownOptionText">
               Option 2
             </h2>
-            <input className="scheduleEditorIndividualOperationDropdownOptionInput"></input>
+            <input className="scheduleEditorIndividualOperationDropdownOptionInput" />
           </div>
           <div className="scheduleEditorIndividualOperationDropdownOptionContainer">
-            {" "}
             <h2 className="scheduleEditorIndividualOperationDropdownOptionText">
               Option 3
             </h2>
-            <input className="scheduleEditorIndividualOperationDropdownOptionInput"></input>
+            <input className="scheduleEditorIndividualOperationDropdownOptionInput" />
           </div>
           <div className="scheduleEditorIndividualOperationDropdownOptionContainer">
             <h2
-              onClick={(e) => deleteOperation(props.index)}
+              onClick={() => deleteOperation(props.index)}
               className="scheduleEditorIndividualOperationDropdownDeleteText"
             >
               Delete Operation
             </h2>
           </div>
         </div>
-      ) : null}
+      )}
     </div>
   );
 };

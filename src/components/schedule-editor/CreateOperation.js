@@ -1,3 +1,4 @@
+import React from "react";
 // Images
 import deviceOpertion from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/operation-icons/device-operation.png";
 import tranferIcon from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/operation-icons/transfer-plate.png";
@@ -10,6 +11,13 @@ import startNextThreadIcon from "/Users/edenphillips/Desktop/Projects/uk_robotic
  * @returns {JSX.Element}
  */
 const CreateOperaiton = (props) => {
+  // Object containing the names of operations with the allocated image for map rendering of operation options
+  const operationIcons = {
+    "Transfer Plate": tranferIcon,
+    "Device Operation": deviceOpertion,
+    "Break Loop": breakLoopIcon,
+    "Start Next Schedule Thread": startNextThreadIcon,
+  }; 
   /**
    * Adds a new operation to the currently opened schedule
    * Then once added closes the selector
@@ -48,106 +56,24 @@ const CreateOperaiton = (props) => {
     <div className="scheduleEditorCreateOptionsContainer">
       <h2 className="scheduleEditorCreateOptionsText">Choose Operation</h2>
       <div className="scheduleEditorCreateOptionsInnerContainer">
-        <div
-          id="Tranfer Plate"
-          onClick={(e) => createOperation(e)}
-          className="scheduleEditorCreateOptionsIndividualContainer"
-        >
-          <img
-            className="scheduleEditorCreateOptionsIndividualImage"
-            src={tranferIcon}
-          ></img>
-        </div>{" "}
-        <div
-          id="Device Operation"
-          onClick={(e) => createOperation(e)}
-          className="scheduleEditorCreateOptionsIndividualContainer"
-        >
-          <img
-            className="scheduleEditorCreateOptionsIndividualImage"
-            src={deviceOpertion}
-          ></img>
-        </div>{" "}
-        <div
-          id="Break Loop"
-          onClick={(e) => createOperation(e)}
-          className="scheduleEditorCreateOptionsIndividualContainer"
-        >
-          <img
-            className="scheduleEditorCreateOptionsIndividualImage"
-            src={breakLoopIcon}
-          ></img>
-        </div>{" "}
-        <div
-          id="Start Next Schedule Thread"
-          onClick={(e) => createOperation(e)}
-          className="scheduleEditorCreateOptionsIndividualContainer"
-        >
-          <img
-            className="scheduleEditorCreateOptionsIndividualImage"
-            src={startNextThreadIcon}
-          ></img>
-        </div>{" "}
-        <div
-          id="Tranfer Plate"
-          onClick={(e) => createOperation(e)}
-          className="scheduleEditorCreateOptionsIndividualContainer"
-        >
-          <img
-            className="scheduleEditorCreateOptionsIndividualImage"
-            src={tranferIcon}
-          ></img>
-        </div>{" "}
-        <div
-          id="Device Operation"
-          onClick={(e) => createOperation(e)}
-          className="scheduleEditorCreateOptionsIndividualContainer"
-        >
-          <img
-            className="scheduleEditorCreateOptionsIndividualImage"
-            src={deviceOpertion}
-          ></img>
-        </div>{" "}
-        <div
-          id="Break Loop"
-          onClick={(e) => createOperation(e)}
-          className="scheduleEditorCreateOptionsIndividualContainer"
-        >
-          <img
-            className="scheduleEditorCreateOptionsIndividualImage"
-            src={breakLoopIcon}
-          ></img>
-        </div>{" "}
-        <div
-          id="Start Next Schedule Thread"
-          onClick={(e) => createOperation(e)}
-          className="scheduleEditorCreateOptionsIndividualContainer"
-        >
-          <img
-            className="scheduleEditorCreateOptionsIndividualImage"
-            src={startNextThreadIcon}
-          ></img>
-        </div>{" "}
-        <div
-          id="Tranfer Plate"
-          onClick={(e) => createOperation(e)}
-          className="scheduleEditorCreateOptionsIndividualContainer"
-        >
-          <img
-            className="scheduleEditorCreateOptionsIndividualImage"
-            src={tranferIcon}
-          ></img>
-        </div>{" "}
-        <div
-          id="Device Operation"
-          onClick={(e) => createOperation(e)}
-          className="scheduleEditorCreateOptionsIndividualContainer"
-        >
-          <img
-            className="scheduleEditorCreateOptionsIndividualImage"
-            src={deviceOpertion}
-          ></img>
-        </div>{" "}
+        {[...Array(3)].map(() => (
+          <React.Fragment>
+            {Object.keys(operationIcons).map((operationName, index) => (
+              <div
+                key={index}
+                id={operationName}
+                onClick={createOperation}
+                className="scheduleEditorCreateOptionsIndividualContainer"
+              >
+                <img
+                  className="scheduleEditorCreateOptionsIndividualImage"
+                  src={operationIcons[operationName]}
+                  alt={operationName}
+                />
+              </div>
+            ))}
+          </React.Fragment>
+        ))}
       </div>
     </div>
   );

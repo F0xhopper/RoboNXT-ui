@@ -13,7 +13,7 @@ const ScheduleSelector = (props) => {
    * @param {string} scheduleName - The name of schedule pressed
    */
   function openSchedule(scheduleName) {
-    // If the schedule isnt currently open changes open schdule to clicked preventing unnecessary rerenders
+    // If the schedule isnt currently open changes open schedule to clicked preventing unnecessary rerenders
     if (props.currentlyOpenSchedules !== scheduleName) {
       props.setCurrentlyOpenSchedules(scheduleName);
     }
@@ -29,7 +29,7 @@ const ScheduleSelector = (props) => {
         ...prevState,
         { name: scheduleInput, operations: [] },
       ]);
-      // Closes the create schedule input 
+      // Closes the create schedule input
       setCreatingSchedule(false);
       // Sets input to default so when opened again doesn't show previous text
       setScheduleInput("");
@@ -37,7 +37,7 @@ const ScheduleSelector = (props) => {
   }
 
   return (
-    <div className="schdeduleSelectorContainer">
+    <div className="schededuleSelectorContainer">
       <div className="scheduleCreateButtonContainer">
         <h1
           className="scheduleCreateButtonText"
@@ -57,7 +57,7 @@ const ScheduleSelector = (props) => {
                   : "scheduleSelectorIndividualContainerUnselected"
               }
             >
-              <h1 className="schduleSelectorText">{schedule.name}</h1>
+              <h1 className="scheduleSelectorText">{schedule.name}</h1>
             </div>
           );
         })}
