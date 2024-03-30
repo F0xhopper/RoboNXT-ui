@@ -3,28 +3,29 @@
  * @returns {JSX.Element}
  */
 const ScheduleEditorHeader = () => {
+  // Header option names for map rendering
+  const headerNames = ["Schedule", "Properties", "Parameters", "Interaction"];
   return (
     <div className="scheduleEditorSelectorContainer">
-      <div className="scheduleEditorSelectorIndividualContainerSelected">
-        <h2 className="scheduleEditorSelectorIndividualTextSelected">
-          Schedule
-        </h2>
-      </div>
-      <div className="scheduleEditorSelectorIndividualContainerUnselected">
-        <h2 className="scheduleEditorSelectorIndividualTextUnselected">
-          Properties
-        </h2>
-      </div>
-      <div className="scheduleEditorSelectorIndividualContainerUnselected">
-        <h2 className="scheduleEditorSelectorIndividualTextUnselected">
-          Parameters
-        </h2>
-      </div>
-      <div className="scheduleEditorSelectorIndividualContainerUnselected">
-        <h2 className="scheduleEditorSelectorIndividualTextUnselected">
-          Interaction
-        </h2>
-      </div>
+      {headerNames.map((name) => (
+        <div
+          className={
+            name == "Schedule"
+              ? "scheduleEditorSelectorIndividualContainerSelected"
+              : "scheduleEditorSelectorIndividualContainerUnselected"
+          }
+        >
+          <h2
+            className={
+              name == "Schedule"
+                ? "scheduleEditorSelectorIndividualTextSelected"
+                : "scheduleEditorSelectorIndividualTextUnselected"
+            }
+          >
+            {name}
+          </h2>
+        </div>
+      ))}
     </div>
   );
 };

@@ -119,24 +119,17 @@ const IndividualOperaiton = (props) => {
       </div>
       {props.openOperation === props.index && (
         <div className="scheduleEditorIndividualOperationDropdownContainer">
-          <div className="scheduleEditorIndividualOperationDropdownOptionContainer">
-            <h2 className="scheduleEditorIndividualOperationDropdownOptionText">
-              Option 1
-            </h2>
-            <input className="scheduleEditorIndividualOperationDropdownOptionInput" />
-          </div>
-          <div className="scheduleEditorIndividualOperationDropdownOptionContainer">
-            <h2 className="scheduleEditorIndividualOperationDropdownOptionText">
-              Option 2
-            </h2>
-            <input className="scheduleEditorIndividualOperationDropdownOptionInput" />
-          </div>
-          <div className="scheduleEditorIndividualOperationDropdownOptionContainer">
-            <h2 className="scheduleEditorIndividualOperationDropdownOptionText">
-              Option 3
-            </h2>
-            <input className="scheduleEditorIndividualOperationDropdownOptionInput" />
-          </div>
+          {["Option 1", "Option 2", "Option 3", "Option 4"].map(
+            (optionName) => (
+              <div className="scheduleEditorIndividualOperationDropdownOptionContainer">
+                <h2 className="scheduleEditorIndividualOperationDropdownOptionText">
+                  {optionName}
+                </h2>
+                <input className="scheduleEditorIndividualOperationDropdownOptionInput" />
+              </div>
+            )
+          )}
+
           <div className="scheduleEditorIndividualOperationDropdownOptionContainer">
             <h2
               onClick={() => deleteOperation(props.index)}
