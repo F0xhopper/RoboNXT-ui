@@ -4,7 +4,7 @@ import arrowUp from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images
 import arrowDown from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/down-arrow.png";
 import hamburgerMenu from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/hamburger-menu.png";
 /**
- * The individual operations of the opened schedule
+ * The individual operation of the opened schedule
  * @returns {JSX.Element}
  */
 const IndividualOperaiton = (props) => {
