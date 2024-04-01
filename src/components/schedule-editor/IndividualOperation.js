@@ -8,6 +8,8 @@ import hamburgerMenu from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/
  * @returns {JSX.Element}
  */
 const IndividualOperaiton = (props) => {
+  // Name of options for each operation
+  const optionNames = ["Option 1", "Option 2", "Option 3", "Option 4"];
   /**
    * Deletes the operation with given index
    * Then closes current open operation
@@ -119,16 +121,14 @@ const IndividualOperaiton = (props) => {
       </div>
       {props.openOperation === props.index && (
         <div className="scheduleEditorIndividualOperationDropdownContainer">
-          {["Option 1", "Option 2", "Option 3", "Option 4"].map(
-            (optionName) => (
-              <div className="scheduleEditorIndividualOperationDropdownOptionContainer">
-                <h2 className="scheduleEditorIndividualOperationDropdownOptionText">
-                  {optionName}
-                </h2>
-                <input className="scheduleEditorIndividualOperationDropdownOptionInput" />
-              </div>
-            )
-          )}
+          {optionNames.map((optionName) => (
+            <div className="scheduleEditorIndividualOperationDropdownOptionContainer">
+              <h2 className="scheduleEditorIndividualOperationDropdownOptionText">
+                {optionName}
+              </h2>
+              <input className="scheduleEditorIndividualOperationDropdownOptionInput" />
+            </div>
+          ))}
 
           <div className="scheduleEditorIndividualOperationDropdownOptionContainer">
             <h2

@@ -56,7 +56,7 @@ const ScheduleEditor = (props) => {
                   props.schedules.find((schedule) => {
                     return schedule.name === props.currentlyOpenSchedules;
                   }).operations.length -
-                    1 ?? (
+                    1 && (
                   <div className="operationDirectionContainer">
                     <img
                       className="operationDirectionImage"
@@ -81,6 +81,14 @@ const ScheduleEditor = (props) => {
             <div className="operationCreateButtonContainer">
               <h2
                 className="operationCreateButtonText"
+                style={{
+                  marginTop:
+                    props.schedules.find((schedule) => {
+                      return schedule.name === props.currentlyOpenSchedules;
+                    }).operations.length !== 0
+                      ? "0px"
+                      : "20px",
+                }}
                 onClick={() => setCreatingNewOperation(true)}
               >
                 +

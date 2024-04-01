@@ -470,6 +470,7 @@ code {
   filter: brightness(1.1);
 }
 .operationCreateButtonText {
+  transition: 0s;
   color: #0987f6;
   cursor: pointer;
   font-weight: 400;
