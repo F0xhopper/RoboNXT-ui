@@ -40,7 +40,7 @@ const Navigator = () => {
   return (
     <div className="navigatorBar">
       <div className="navigatorContainer">
-        {Object.keys(navigatorIcons).map((iconName, index) => (
+        {Object.keys(navigatorIcons).map((iconName) => (
           <div
             className={
               iconName == "Schedule Editor"
