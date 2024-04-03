@@ -5,7 +5,7 @@ import ScheduleSelector from "./ScheduleSelector";
 import CreateOperaiton from "./CreateOperation";
 import IndividualOperaiton from "./IndividualOperation";
 // Image
-import operationDirection from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/operation-direction.png";
+import operationDirection from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/schedule-editor/operation-direction.png";
 /**
  * The schedule editor wrapper
  * Encompases the schedule selector, each inidivual operation of the open schedule and the create operation tool if in create mode

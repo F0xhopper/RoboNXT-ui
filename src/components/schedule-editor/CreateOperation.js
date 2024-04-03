@@ -1,9 +1,9 @@
 import React from "react";
 // Images
-import deviceOpertion from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/operation-icons/device-operation.png";
-import tranferIcon from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/operation-icons/transfer-plate.png";
-import breakLoopIcon from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/operation-icons/break-loop.png";
-import startNextThreadIcon from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/operation-icons/start-next-thread.png";
+import deviceOpertion from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/schedule-editor/device-operation-icon.png";
+import tranferIcon from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/schedule-editor/transfer-plate-icon.png";
+import breakLoopIcon from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/schedule-editor/break-loop-icon.png";
+import startNextThreadIcon from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/schedule-editor/start-next-thread-icon.png";
 /**
  * Create new operation selector
  * Appears when plus button in the open schedule is pressed

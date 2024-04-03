@@ -1,8 +1,8 @@
 import React from "react";
 // Images
-import arrowUp from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/up-arrow.png";
-import arrowDown from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/down-arrow.png";
-import hamburgerMenu from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/hamburger-menu.png";
+import arrowUp from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/schedule-editor/up-arrow.png";
+import arrowDown from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/schedule-editor/down-arrow.png";
+import hamburgerMenu from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/schedule-editor/hamburger-menu.png";
 /**
  * The individual operation of the opened schedule
  * @returns {JSX.Element}

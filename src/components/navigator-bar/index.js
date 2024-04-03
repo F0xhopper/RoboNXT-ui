@@ -1,11 +1,11 @@
 import { useState } from "react";
 // Images
-import penIcon from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/navigator-bar-icons/Icon__0000_Layer-7.png";
-import storageIcon from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/navigator-bar-icons/Icon__0003_Layer-4.png";
-import objectIcon from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/navigator-bar-icons/Icon__0001_Layer-6.png";
-import deviceIcon from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/navigator-bar-icons/Icon__0004_Layer-3.png";
-import eventIcon from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/navigator-bar-icons/Icon__0005_Layer-1.png";
-import screenIcon from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/navigator-bar-icons/Icon__0002_Layer-5.png";
+import penIcon from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/navigator-bar/schedule-editor-icon.png";
+import storageIcon from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/navigator-bar/storage-manager-icon.png";
+import objectIcon from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/navigator-bar/object-manager-icon.png";
+import deviceIcon from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/navigator-bar/device-manager-icon.png";
+import eventIcon from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/navigator-bar/event-viewer-icon.png";
+import screenIcon from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/navigator-bar/simulation-icon.png";
 /**
  * The left side navigator bar
  * A tool tip appears when hovering over each icon

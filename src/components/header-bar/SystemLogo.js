@@ -1,5 +1,5 @@
 // Image
-import logo from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/company-branding.png";
+import logo from "/Users/edenphillips/Desktop/Projects/uk_robotics/src/Images/header-bar/company-branding.png";
 /**
  * The systems / company logo
  * @returns {JSX.Element} 
