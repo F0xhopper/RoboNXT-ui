@@ -111,8 +111,9 @@ code {
   float: left;
 }
 .systemLogoImage {
-  width: 115px;
-  margin: 10px;
+  width: 97px;
+  margin: 20px;
+  margin-right: 8px;
   margin-top: 14px;
 }
 .toolBarImage {
